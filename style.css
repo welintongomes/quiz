@@ -1,0 +1,476 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 2px;
+}
+
+h1 {
+    color: #333;
+}
+
+.tabs {
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    margin-right: 10px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: rgb(185, 17, 17);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tab-button:hover {
+    background-color: #0056b3;
+}
+
+.tab-content {
+    margin-top: 10px;
+    padding: 15px;
+    background: rgb(255, 255, 255);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #d7d7d7;
+}
+
+#opcoes {
+    margin-top: 10px;
+}
+
+.option {
+    margin: 5px 0;
+}
+
+.button-group {
+    display: flex;
+    /* Para os botões ficarem lado a lado */
+    gap: 10px;
+    /* Espaçamento entre os botões */
+    margin-right: 10px;
+    /* Espaço entre os botões e o texto da pergunta */
+}
+
+li {
+    text-shadow: 2px 2px 5px rgba(168, 163, 163, 0.7);
+    /* Ajuste os valores conforme necessário */
+    display: flex;
+    /* Faz com que os itens da lista fiquem em linha */
+    align-items: center;
+    /* Alinha verticalmente o texto da pergunta e os botões */
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button-group {
+    margin-right: 5px;
+}
+
+.question-text {
+    overflow: hidden;
+    /* Impede que o texto ultrapasse */
+    text-overflow: ellipsis;
+    /* Adiciona "..." no final do texto muito longo */
+    /* Não permite que o texto quebre em várias linhas */
+    flex-grow: 1;
+    /* Faz o texto ocupar o espaço disponível */
+    margin-right: 10px;
+    /* Espaçamento entre o texto e os botões */
+}
+
+.resposta-container {
+    display: flex;
+    align-items: center;
+    /* Alinha os itens verticalmente no centro */
+    margin-bottom: 10px;
+    /* Espaço entre as respostas */
+}
+
+.resposta-container input.resposta {
+    flex: 1;
+    /* Faz o campo de resposta ocupar o espaço disponível */
+    margin-right: 10px;
+    /* Espaço entre o campo de resposta e os botões */
+}
+
+.resposta-container button {
+    margin-left: 50px;
+    /* Espaço entre os botões */
+}
+
+
+
+
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: var(--bs-list-group-item-padding-y) var(--bs-list-group-item-padding-x);
+    color: var(--bs-list-group-color);
+    text-decoration: none;
+    background-color: var(--bs-list-group-bg);
+    border: var(--bs-list-group-border-width) solid var(--bs-list-group-border-color);
+}
+
+.dividirNaTela {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permite que os elementos se movam para a próxima linha se não houver espaço suficiente */
+}
+
+.btIniciarQuis {
+    display: flex;
+    gap: 22px;
+}
+
+.textoCenter {
+    padding-top: 20px;
+    font-size: calc(1.025rem + 0.6vw);
+    text-shadow: 2px 2px 5px rgba(168, 163, 163, 0.7);
+    /* Ajuste os valores conforme necessário */
+}
+
+.dropAddPerguntas {
+    border-radius: 4px;
+    flex: 1 1 50%;
+    /* Cresce e encolhe, ocupando 50% do espaço disponível */
+    box-sizing: border-box;
+    /* Inclui padding e borda na largura total */
+    padding: 0px;
+    /* Opcional: adiciona um espaço interno */
+}
+
+@media (max-width: 600px) {
+
+    /* Ajuste o valor conforme necessário dropdawn add perguntas*/
+    .dropAddPerguntas {
+        display: flex;
+        flex: 1 1 100%;
+        /* Em telas menores, ocupam 100% cada um */
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    text-shadow: 2px 2px 5px rgba(168, 163, 163, 0.7);
+    /* Ajuste os valores conforme necessário */
+}
+
+.form-label {
+    text-shadow: 2px 2px 5px rgba(168, 163, 163, 0.7);
+    /* Ajuste os valores conforme necessário */
+}
+
+.btn {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Sombra padrão */
+    transition: box-shadow 0.3s ease;
+    /* Suaviza a transição da sombra */
+}
+
+.btn:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    /* Aumenta a sombra ao passar o mouse */
+}
+
+/*configuraçao dos botões das perguntas*/
+.button-group button {
+    border-right: 8px;
+    font-size: 1rem;
+    line-height: 1.5;
+    /* Define uma altura de linha fixa */
+    margin-right: 6px;
+    padding: 10px 15px;
+    /* Ajuste o padding conforme necessário */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.6s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+    display: inline-block;
+    /* Garante que o botão não expanda */
+}
+
+.button-group button:hover {
+    transform: scale(1.1);
+    /* Aumenta apenas a escala do botão */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    /* Pode ajustar a sombra se desejar */
+}
+
+
+/*estilizar os dropdown add perguntas*/
+#categoria-quiz,
+#categoria-select {
+    padding: 1px;
+    /* Ajuste o padding conforme necessário */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    /* Sombra padrão */
+    transition: box-shadow 0.4s ease;
+}
+
+#categoria-quiz,
+#categoria-select:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    /* Sombra padrão */
+    transition: box-shadow 0.4s ease;
+}
+
+/*estilizar botões com as respostas*/
+button.option {
+    border-right: 8px;
+    font-size: 1rem;
+    line-height: 1.5;
+    /* Define uma altura de linha fixa */
+    margin-right: 6px;
+    padding: 10px 15px;
+    /* Ajuste o padding conforme necessário */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.6s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+    display: inline-block;
+    /* Garante que o botão não expanda */
+}
+
+button.option:hover {
+    transform: scale(1.1);
+    /* Aumenta apenas a escala do botão */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    /* Pode ajustar a sombra se desejar */
+}
+
+
+
+
+
+
+/*estilizar texto dentro das perguntas na lista de pergunta*/
+span.question-text {
+    font-size: larger;
+    font-size: calc(1.010rem + 0.6vw);
+}
+
+span.details-text {
+    text-shadow: 0px 0px 0px rgba(168, 163, 163, 0.7);
+    font-size: calc(0.825rem + 0.6vw);
+}
+
+select#categoria-quiz {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+select#categoria-quiz.form-select:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    /* Aumenta a sombra ao passar o mouse */
+}
+
+.cabecalho {
+    text-align: left;
+}
+
+.justify-content-center {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    flex-wrap: wrap;
+    margin-top: -23px;
+}
+
+.textPA {
+    font-size: calc(1.025rem + 0.6vw);
+}
+
+h4 {
+    font-size: calc(0.825rem + 0.6vw);
+}
+
+.nav-tabs .nav-link:hover {
+    font-size: 1.1rem;
+    background-color: #cccfd4;
+}
+
+/*estilos para o modal*/
+.modal {
+    display: none;
+    /* Garante que o modal esteja oculto inicialmente */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Fundo semi-transparente */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*fim estilos para o modal*/
+
+/*estilos para media query das respostas*/
+/*respostas para smartphones*/
+@media (max-width: 767px) {
+    #opcoes {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+    }
+}
+
+@media (min-width: 767px) {
+    #opcoes {
+        display: flex;
+        /* Muda para flexbox */
+        justify-content: space-between;
+        /* Distribui espaço entre os itens */
+        align-items: center;
+        /* Alinha os itens verticalmente ao centro, se necessário */
+        margin: 1px auto;
+        /* Centraliza o contêiner */
+        width: 100%;
+        /* Ocupa toda a largura */
+        padding: 0;
+        /* Remove padding se houver */
+    }
+
+    .option {
+        flex: 1;
+        /* Cada item ocupa espaço igual */
+        margin: 0 5px;
+        /* Espaço entre os botões */
+        text-align: center;
+        /* Centraliza o texto nos botões */
+    }
+}
+
+/*respostas botões respostas para smartphones*/
+@media (max-width: 767px) {
+    .button-group button {
+        border-right: 0px;
+        font-size: 1.1rem;
+        line-height: 1.7;
+        margin-right: 0px;
+        padding: 0px 3px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.6s ease, box-shadow 0.3s ease;
+        margin-bottom: 8px;
+        display: inline-block;
+        /* margin: 7px;*/
+    }
+}
+
+.respons {
+    display: flex;
+    gap: 2px;
+    justify-content: center;
+}
+@media (max-width: 767px) {
+    div.respons button {
+        width: 100%;
+        border-right: 8px;
+        font-size: 1rem;
+        line-height: 1.5;
+        /* Define uma altura de linha fixa */
+        margin-right: 6px;
+        padding: 10px 15px;
+        /* Ajuste o padding conforme necessário */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.6s ease, box-shadow 0.3s ease;
+        margin-bottom: 20px;
+        display: inline-block;
+        /* Garante que o botão não expanda */
+    }
+    .respons{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    div.respons button:hover {
+        transform: scale(1.1);
+        /* Aumenta apenas a escala do botão */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        /* Pode ajustar a sombra se desejar */
+    }
+
+}
+@media (min-width: 767px) {
+    div.respons button {
+        text-wrap: nowrap;
+        width: 33%;
+        border-right: 8px;
+        font-size: 1rem;
+        line-height: 1.5;
+        /* Define uma altura de linha fixa */
+        margin-right: 6px;
+        padding: 10px 15px;
+        /* Ajuste o padding conforme necessário */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.6s ease, box-shadow 0.3s ease;
+        margin-bottom: 20px;
+        display: inline-block;
+        /* Garante que o botão não expanda */
+    }
+
+    div.respons button:hover {
+        transform: scale(1.1);
+        /* Aumenta apenas a escala do botão */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        /* Pode ajustar a sombra se desejar */
+    }
+
+}
+
