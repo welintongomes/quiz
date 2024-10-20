@@ -3,11 +3,15 @@ const urlsToCache = [
     './', // Cacheia o arquivo HTML principal
     './icon-192x192.png',
     './icon-512x512.png',
-    './manifest.json',
-    './style.css',
     './index.html',
+    './style.css',
     './bootstrap.bundle.min.js',
     './bootstrap.min.css',
+    './acertou.mp3',
+    './conclusao.mp3',
+    './errou.mp3',
+    './fracasso.mp3',
+    './timeout.mp3',
     './script.js'
     // Adicione outros arquivos que devem ser armazenados em cache, como imagens
 ];
