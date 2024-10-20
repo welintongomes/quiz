@@ -219,7 +219,7 @@ function deleteAllQuestions() {
             loadQuestions(); // Recarrega a lista de perguntas
             loadCategorias(); // Atualiza as categorias
             alertaSucesso();
-            showModalMessage("Todas as perguntas foram excluídas.");
+            showModalMessage("Todas as perguntas foram excluídas.",'alert');
         };
     }
 }
@@ -389,7 +389,7 @@ function startQuiz() {
     currentCategory = document.getElementById("categoria-quiz").value;
     if (!currentCategory) {
         alertaTempo();
-        showModalMessage("Selecione uma categoria para começar.");
+        showModalMessage("Selecione uma categoria para começar.",'alert');
         return;
     }
 
@@ -418,7 +418,7 @@ function startQuiz() {
 async function loadNextQuestion(perguntasFiltradas) {
     if (usedQuestions.length === perguntasFiltradas.length) {
         alertaConclusao();
-        await showModalMessage("Você concluiu esta categoria! Para jogar novamente, inicie o quiz.");
+        await showModalMessage("Você concluiu esta categoria! Para jogar novamente, inicie o quiz.",'alert');
         usedQuestions = []; // Reinicia as perguntas usadas
         document.getElementById("quiz").style.display = 'none'; // Esconde o quiz
         return; // Finaliza a função
@@ -478,7 +478,7 @@ function startTimer(tempoLimite) {
             clearInterval(timer);
             document.getElementById("timer").textContent = "Tempo esgotado!";
             alertaTempo();
-            await showModalMessage("Tempo esgotado!"); // Aguarda o fechamento do modal
+            await showModalMessage("Tempo esgotado!",'error','error'); // Aguarda o fechamento do modal
             handleTimeOut(); // Chama a função após o modal ser fechado
         }
     }, 1000);
@@ -504,33 +504,35 @@ async function checkAnswer(selectedIndex) {
     const options = ["A", "B", "C", "D"];
     const selectedAnswer = options[selectedIndex];
     const respostaCorreta = currentQuestion.respostaCorreta;
-    const descricao = currentQuestion.descricaoRespostas[selectedIndex]; // Pega a descrição da resposta
+    const descricao = currentQuestion.descricaoRespostas[selectedIndex];
 
-    clearInterval(timer); // Para o temporizador ao responder
-    document.getElementById("timer").textContent = ""; // Limpa o timer
+    clearInterval(timer);
+    document.getElementById("timer").textContent = "";
 
     if (selectedAnswer === respostaCorreta) {
         score++;
         alertaSucesso();
-        await showModalMessage(`Correto! A resposta é: ${currentQuestion.respostas[selectedIndex]}\nDescrição: ${descricao}`);
+        await showModalMessage(`Correto! A resposta é: ${currentQuestion.respostas[selectedIndex]}\nDescrição: ${descricao}`, 'success');
     } else {
         alertaErro();
-        await showModalMessage(`Errado! A resposta correta é: ${currentQuestion.respostas[["A", "B", "C", "D"].indexOf(respostaCorreta)]}\nDescrição: ${currentQuestion.descricaoRespostas[["A", "B", "C", "D"].indexOf(respostaCorreta)]}`);
+        await showModalMessage(`Errado! A resposta correta é: ${currentQuestion.respostas[["A", "B", "C", "D"].indexOf(respostaCorreta)]}\nDescrição: ${currentQuestion.descricaoRespostas[["A", "B", "C", "D"].indexOf(respostaCorreta)]}`, 'error');
+        
         const modoJogo = document.getElementById("modo-jogo").value;
         switch (modoJogo) {
             case "hard":
-                score--; // Perde 1 ponto
+                score--;
                 break;
             case "impossivel":
-                score -= 2; // Perde 2 pontos
+                score -= 2;
                 break;
         }
     }
 
     document.getElementById("score").textContent = score;
-    saveScore(); // Salva o score
-    loadNextQuestion(questions.filter(q => q.categoria === currentCategory)); // Carrega a próxima pergunta
+    saveScore();
+    loadNextQuestion(questions.filter(q => q.categoria === currentCategory));
 }
+
 
 function nextQuestion() {
     // Diminui o score
@@ -611,7 +613,7 @@ function importDatabase(event) {
                 loadQuestions(); // Carrega as perguntas
                 loadCategorias(); // Atualiza as categorias
                 alertaConclusao();
-                showModalMessage("Banco de dados importado com sucesso!");
+                showModalMessage("Banco de dados importado com sucesso!",'success');
 
             };
         } catch (error) {
@@ -648,20 +650,44 @@ function openModal() {
 }
 
 function closeModal() {
-    document.getElementById("modal").style.display = "none";
+    const modal = document.getElementById("modal");
+    modal.style.display = "none";
+    
+    // Limpa a classe para não afetar o próximo uso
+    const modalContent = document.getElementById("modal-content");
+    modalContent.className = "modal-content"; // Reseta as classes
+
     if (resolveModalPromise) {
         resolveModalPromise(); // Resolve a promessa quando o modal é fechado
         resolveModalPromise = null; // Limpa a referência
     }
 }
 
-function showModalMessage(message) {
+/*cores para o modal padrão neutro
+lembre-se sempre que for usar showModalMessage tem que por qual type de modal vai querer usar 
+se nao especificar o padrão neutral será usado*/
+function showModalMessage(message, type) {
+    const modalContent = document.getElementById("modal-content");
+    modalContent.className = "modal-content"; // Limpa classes anteriores
+
+    if (type === 'success') {
+        modalContent.classList.add('success');
+    } else if (type === 'error') {
+        modalContent.classList.add('error');
+    } else if (type === 'alert') {
+        modalContent.classList.add('alert');
+    } else {
+        modalContent.classList.add('neutral'); // Classe padrão para mensagens neutras
+    }
+
     document.getElementById("modal-message").textContent = message;
-    openModal();
+    document.getElementById("modal").style.display = "block"; // Mostra o modal
     return new Promise((resolve) => {
         resolveModalPromise = resolve; // Armazena a função de resolução da promessa
     });
 }
+
+
 
 // Fechar o modal ao clicar fora dele
 window.onclick = function (event) {
