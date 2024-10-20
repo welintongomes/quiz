@@ -331,13 +331,7 @@ h4 {
     /* Fundo semi-transparente */
 }
 
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-}
+
 
 .close {
     color: #aaa;
@@ -483,4 +477,130 @@ h4 {
     justify-content: flex-start;
     align-items: flex-end;
     flex-direction: row;
+}
+
+
+/*cores para o modal padrão neutro
+lembre-se sempre que for usar showModalMessage tem que por qual modal quer usar 
+senão padrão neutral será usado*/
+
+.modal-content.neutral {
+    background-color: #e9ecef; /* Verde claro */
+    color: #000; /* Texto verde escuro */
+    width: 96%;
+    pointer-events: auto;
+    background-clip: padding-box;
+    border:rgba(0, 0, 0, 0.1);
+    border-radius: 14px;
+    outline: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+/*no pc ao passar o mouse sobre o modal neutro ou no celular ao segurar encima*/
+.modal-content.neutral:hover {
+    background-color: #e9ecef; /* Verde claro */
+    color: #000; /* Texto verde escuro */
+    width: 96%;
+    pointer-events: auto;
+    background-clip: padding-box;
+    border:rgba(0, 0, 0, 0.1);
+    border-radius: 14px;
+    outline: 0;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+
+}
+/*cores para o modal resposta certa ou errada*/
+.modal-content.success {
+    background-color: #d4edda; /* Verde claro */
+    color: #155724; /* Texto verde escuro */
+    width: 96%;
+    pointer-events: auto;
+    background-clip: padding-box;
+    border:rgba(0, 0, 0, 0.1);
+    border-radius: 14px;
+    outline: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.modal-content.success:hover {
+    background-color: #d4edda; /* Verde claro */
+    color: #155724; /* Texto verde escuro */
+    width: 96%;
+    pointer-events: auto;
+    background-clip: padding-box;
+    border:rgba(0, 0, 0, 0.1);
+    border-radius: 14px;
+    outline: 0;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content.error {
+    background-color: #f8d7da; /* Vermelho claro */
+    color: #721c24; /* Texto vermelho escuro */
+    width: 96%;
+    pointer-events: auto;
+    background-clip: padding-box;
+    border:rgba(0, 0, 0, 0.1);
+    border-radius: 14px;
+    outline: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.modal-content.error:hover {
+    background-color: #f8d7da; /* Vermelho claro */
+    color: #721c24; /* Texto vermelho escuro */
+    width: 96%;
+    pointer-events: auto;
+    background-clip: padding-box;
+    border:rgba(0, 0, 0, 0.1);
+    border-radius: 14px;
+    outline: 0;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+/*modal alerta amarelo*/
+.modal-content.alert {
+    
+    text-align: center;
+    background-color: #f8e1b1 ; /* Vermelho claro */
+    color: #721c24; /* Texto vermelho escuro */
+    width: 70%;
+    pointer-events: auto;
+    background-clip: padding-box;
+    border:rgba(0, 0, 0, 0.1);
+    border-radius: 14px;
+    outline: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.modal-content.alert:hover {
+    text-align: center;
+    font-size: 1.1rem;
+    background-color: #f8e5b7; /* amarelo alerta*/
+    color: #721c24; /* Texto vermelho escuro */
+    width: 71%;
+    pointer-events: auto;
+    background-clip: padding-box;
+    border:rgba(0, 0, 0, 0.1);
+    border-radius: 14px;
+    outline: 0;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+
+}
+
+/*fim cores para o modal resposta certa ou errada*/
+#modal {
+    display: none; /* Inicialmente oculto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0 0 0 / 26%); /* Fundo semi-transparente */
+}
+
+.modal-content {
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 8px; /* Bordas arredondadas */
 }
