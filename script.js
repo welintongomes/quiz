@@ -670,3 +670,14 @@ window.onclick = function (event) {
         closeModal();
     }
 };
+
+//service worker para funcionar offline
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+        .then(function (registration) {
+            console.log('Service Worker registrado com sucesso:', registration.scope);
+        }).catch(function (error) {
+            console.log('Falha ao registrar o Service Worker:', error);
+        });
+}
+//fim service worker para funcionar offline
