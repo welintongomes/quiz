@@ -16,23 +16,22 @@
 <body>
 
     <!-- modal para exibir as mensagens -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <p id="modal-message">Mensagem aqui</p>
+    <div id="modal" style="display: none;">
+        <div id="modal-content" class="modal-content">
+            <span id="close" onclick="closeModal()" style="cursor: pointer;">&times;</span>
+            <div id="modal-message"></div>
         </div>
     </div>
-
-    <button onclick="openModal()" style="display: none;">Abrir Modal</button>
+    
     <!-- fim modal para exibir as mensagens -->
 
     <div class="container mt-4">
 
-        <div class="nav nav-tabs justify-content-center mb-4">
-            <h1 class="cabecalho">Quiz</h1>
-            <button class="nav-link " onclick="showTab('perguntas')">Adicionar Perguntas</button>
-            <button class="nav-link" onclick="showTab('respostas')">Iniciar Quiz</button>
-        </div>
+        <div class="nav nav-tabs justify-content-between d-flex flex-wrap mb-4">
+    <h1 class="cabecalho flex-grow-1 text-center">Quiz</h1>
+    <button class="nav-link flex-grow-1" onclick="showTab('perguntas')">Adicionar Perguntas</button>
+    <button class="nav-link flex-grow-1" onclick="showTab('respostas')">Iniciar Quiz</button>
+</div>
 
         <div id="perguntas" class="tab-content">
             <h2>Categoria da Pergunta</h2>
@@ -48,43 +47,50 @@
                 <input type="text" id="pergunta" class="form-control" placeholder="Digite sua pergunta">
             </div>
 
-            <div class="mb-3 teste">
-                <div class="d-flex align-items-center mb-2">
-                    <button class="btn btn-outline-secondary me-2" onclick="toggleDescricao('descricaoA')">+ </button>
-                    <input type="text" class="resposta form-control" placeholder="Resposta A">
+            <div class="container">
+                <div class="row">
+                    <!-- Primeira Div (Resposta A) -->
+                    <div class="col-md-3 mb-3">
+                        <div class="d-flex align-items-center mb-2">
+                            <button class="btn btn-outline-secondary me-2" onclick="toggleDescricao('descricaoA')">+ </button>
+                            <input type="text" class="resposta form-control" placeholder="Resposta A">
+                        </div>
+                        <input type="text" id="descricaoA" class="descricao form-control mb-2" placeholder="Descrição da Resposta A" style="display: none;">
+                        <button class="btn btn-outline-secondary" onclick="toggleDescricao('descricaoA')" style="display: none;">Ocultar Descrição</button>
+                    </div>
+            
+                    <!-- Segunda Div (Resposta B) -->
+                    <div class="col-md-3 mb-3">
+                        <div class="d-flex align-items-center mb-2">
+                            <button class="btn btn-outline-secondary me-2" onclick="toggleDescricao('descricaoB')">+ </button>
+                            <input type="text" class="resposta form-control" placeholder="Resposta B">
+                        </div>
+                        <input type="text" id="descricaoB" class="descricao form-control mb-2" placeholder="Descrição da Resposta B" style="display: none;">
+                        <button class="btn btn-outline-secondary" onclick="toggleDescricao('descricaoB')" style="display: none;">Ocultar Descrição</button>
+                    </div>
+            
+                    <!-- Terceira Div (Resposta C) -->
+                    <div class="col-md-3 mb-3">
+                        <div class="d-flex align-items-center mb-2">
+                            <button class="btn btn-outline-secondary me-2" onclick="toggleDescricao('descricaoC')">+ </button>
+                            <input type="text" class="resposta form-control" placeholder="Resposta C">
+                        </div>
+                        <input type="text" id="descricaoC" class="descricao form-control mb-2" placeholder="Descrição da Resposta C" style="display: none;">
+                        <button class="btn btn-outline-secondary" onclick="toggleDescricao('descricaoC')" style="display: none;">Ocultar Descrição</button>
+                    </div>
+            
+                    <!-- Quarta Div (Resposta D) -->
+                    <div class="col-md-3 mb-3">
+                        <div class="d-flex align-items-center mb-2">
+                            <button class="btn btn-outline-secondary me-2" onclick="toggleDescricao('descricaoD')">+ </button>
+                            <input type="text" class="resposta form-control" placeholder="Resposta D">
+                        </div>
+                        <input type="text" id="descricaoD" class="descricao form-control mb-2" placeholder="Descrição da Resposta D" style="display: none;">
+                        <button class="btn btn-outline-secondary" onclick="toggleDescricao('descricaoD')" style="display: none;">Ocultar Descrição</button>
+                    </div>
                 </div>
-                <input type="text" id="descricaoA" class="descricao form-control mb-2"
-                    placeholder="Descrição da Resposta A" style="display: none;">
-                <button class="btn btn-outline-secondary" onclick="toggleDescricao('descricaoA')"
-                    style="display: none;">Ocultar Descrição</button>
-
-                <div class="d-flex align-items-center mb-2">
-                    <button class="btn btn-outline-secondary me-2" onclick="toggleDescricao('descricaoB')">+ </button>
-                    <input type="text" class="resposta form-control" placeholder="Resposta B">
-                </div>
-                <input type="text" id="descricaoB" class="descricao form-control mb-2"
-                    placeholder="Descrição da Resposta B" style="display: none;">
-                <button class="btn btn-outline-secondary" onclick="toggleDescricao('descricaoB')"
-                    style="display: none;">Ocultar Descrição</button>
-
-                <div class="d-flex align-items-center mb-2">
-                    <button class="btn btn-outline-secondary me-2" onclick="toggleDescricao('descricaoC')">+ </button>
-                    <input type="text" class="resposta form-control" placeholder="Resposta C">
-                </div>
-                <input type="text" id="descricaoC" class="descricao form-control mb-2"
-                    placeholder="Descrição da Resposta C" style="display: none;">
-                <button class="btn btn-outline-secondary" onclick="toggleDescricao('descricaoC')"
-                    style="display: none;">Ocultar Descrição</button>
-
-                <div class="d-flex align-items-center mb-2">
-                    <button class="btn btn-outline-secondary me-2" onclick="toggleDescricao('descricaoD')">+ </button>
-                    <input type="text" class="resposta form-control" placeholder="Resposta D">
-                </div>
-                <input type="text" id="descricaoD" class="descricao form-control mb-2"
-                    placeholder="Descrição da Resposta D" style="display: none;">
-                <button class="btn btn-outline-secondary" onclick="toggleDescricao('descricaoD')"
-                    style="display: none;">Ocultar Descrição</button>
             </div>
+            
 
             <div class="mb-3">
                 <input type="text" id="resposta-correta" class="form-control"
